@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'backtest/css/style.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <nav class="">
+        <img src="{% static 'backtest/media/Sky-Logo.png' %}" alt="Sky Logo" class="logo">
+        <div class="nav-text">
+            <h2 class="caveat">Health Check Voting</h2>
+            <h6 id="subHeading" class="">Voting Summary For Sessions</h6>
+        </div>
+        <a class="" href="#settings"><div class="nav-btn"><span class="material-symbols-rounded">settings</span>&nbsp;<strong>Settings</strong></div></a>
+    </nav>
+    <main class="">
+        <table id="table1">
+            <tr>
+                <th colspan="5" class="results"><h3>Results</h3></th>
+            </tr>
+            <tr>
+                <th><h3>Session 1</h3></th>
+                <td><div class="circle-green green"></div></td>
+                <td><div class="circle-amber amber"></div></td>
+                <td><div class="circle-red red"></div></td>
+                <td><div class="circle-white white"></div></td>
+            </tr>
+            <tr>
+                <th><h3>Session 2</h3></th>
+                <td><div class="circle-green green"></div></td>
+                <td><div class="circle-amber amber"></div></td>
+                <td><div class="circle-red red"></div></td>
+                <td><div class="circle-white white"></div></td>
+            </tr>
+            <tr>
+                <th><h3>Session 3</h3></th>
+                <td><div class="circle-green green"></div></td>
+                <td><div class="circle-amber amber"></div></td>
+                <td><div class="circle-red red"></div></td>
+                <td><div class="circle-white white"></div></td>
+            </tr>
+            <tr>
+                <th><h3>Session 4</h3></th>
+                <td><div class="circle-green green"></div></td>
+                <td><div class="circle-amber amber"></div></td>
+                <td><div class="circle-red red"></div></td>
+                <td><div class="circle-white white"></div></td>
+            </tr>
+            <tr>
+                <th><h3>Session 5</h3></th>
+                <td><div class="circle-green green"></div></td>
+                <td><div class="circle-amber amber"></div></td>
+                <td><div class="circle-red red"></div></td>
+                <td><div class="circle-white white"></div></td>
+            </tr>
+            <tr>
+                <td class="exitbtn" colspan="5">
+                    <div class="btn-bar">
+                        <a id="exitbtn" class=""><div class="exit-btn"><span class="material-symbols-rounded">logout</span>&nbsp;<strong>Exit</strong></div></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </main>
+    <footer class="">
+        <img src="{% static 'backtest/media/Sky-Logo.png' %}" alt="Sky Logo" class="footer-logo">
+        <h3 class="caveat">&copy;2025 Sky UK</h3>
+        <p>Privacy Options</p>&nbsp;&nbsp;
+        <p>Terms & Conditions</p>&nbsp;&nbsp;
+        <p>Privacy & Cookies Notice</p>&nbsp;&nbsp;
+        <p>Accessibility</p>&nbsp;&nbsp;
+        <p>Site Map</p>&nbsp;&nbsp;
+        <p>Contact Us</p>&nbsp;&nbsp;
+        <p>Complaints</p>&nbsp;&nbsp;
+        <p>Sky Group</p>&nbsp;&nbsp;
+        <p>Site Locator</p>&nbsp;&nbsp;
+    </footer>
+    <script>
+        window.statsData = {
+            green: {{ stats_green|safe }},
+            amber: {{ stats_amber|safe }},
+            red: {{ stats_red|safe }}
+        };
+    </script>
+    <script src="{% static 'backtest/js/script.js' %}"></script>
+</body>
+</html>
