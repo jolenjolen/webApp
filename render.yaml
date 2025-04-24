@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: django-webapp
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn webApp.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: webApp.settings
+      - key: PYTHON_VERSION
+        value: 3.11
